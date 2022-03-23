@@ -42,4 +42,5 @@ const hirdetesSchema = new Schema({
 
 module.exports = mongoose.model('Hirdetes',hirdetesSchema, 'hirdetesek');
 
-6. Thunder Client: 
+6. Thunder Client: tesztek stb
+7. hahu.js  - app js utvonalak

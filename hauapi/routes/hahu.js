@@ -1,4 +1,5 @@
 const express = require('express');
+const hirdetes = require('../modells/hirdetes');
 const router = express.Router();
 
 const Hirdetes = require('../modells/hirdetes');
@@ -31,6 +32,26 @@ router.post('/', function(req,res,next) {
     }
 
    
+})
+
+
+router.get('/', function(req,res,next) {
+    Hirdetes 
+    .find()
+    .then(hirdetesek => {
+        res.json(hirdetesek);
+    })
+})
+
+router.delete('/:id',function(req,res,next) {
+    const id = req.params.id;
+    Hirdetes
+    .findByIdAndDelete(id)
+    .then(res.json({
+        'status':'deleted'
+    
+    }))
+    .catch(err => console.log(err))
 })
 
 module.exports = router;
