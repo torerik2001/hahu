@@ -8,3 +8,36 @@ A 2. feladat: adatbázis létrehozása
 1. A lokális mongodb elinditása: cmd-ben: mongod parancs (nem lehet becsukni)
 2. mongodb://127.0.0.1:27017 csatlakozás az adatbazishoz compassba
 3. adatbázisok, kollekciok létrehozása és jsnon fájlok importálása.
+
+const mongoose = require('mongoose');
+
+const Schema = mongoose.Schema;
+
+const hirdetesSchema = new Schema({
+    _id: Number,
+    kategoria:Number,
+    cim:{
+        type:String,
+        required:true,
+        unique:true,
+        max:100
+    },
+    leiras:{
+        type:String,
+        max:3000
+    },
+    hirdetesDatuma:{
+        type:Date
+    },
+    serulesmentes:Boolean,
+    arFt:{
+        type:Number,
+        required:true
+    },
+    kepUrl:{
+        type:String,
+        max:300
+    }
+})
+
+module.exports = mongoose.model('Hirdetes',hirdetesSchema, 'hirdetesek');
