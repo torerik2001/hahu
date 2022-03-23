@@ -42,4 +42,4 @@ const hirdetesSchema = new Schema({
 
 module.exports = mongoose.model('Hirdetes',hirdetesSchema, 'hirdetesek');
 
-6. 
+6. Thunder Client: 
